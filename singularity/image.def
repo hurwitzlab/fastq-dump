@@ -1,0 +1,19 @@
+Bootstrap: docker
+From: ubuntu:latest
+
+%runscript
+    echo "Hello!"
+
+%environment
+    PATH=$PATH:/sratoolkit/bin
+
+%post
+    apt update
+    apt install -y wget
+
+    wget -O sratoolkit.tar.gz http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz
+    mkdir sratoolkit
+    tar -xf sratoolkit.tar.gz -C sratoolkit --strip-components 1
+
+%test
+    /sratoolkit/bin/fastq-dump --help
