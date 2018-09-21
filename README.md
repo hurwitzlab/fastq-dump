@@ -1,1 +1,1 @@
-Run fastq-dump on Stampede.
+Run fastq-dump on Stampede2.

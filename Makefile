@@ -3,7 +3,7 @@ EMAIL = $(CYVERSEUSERNAME)@email.arizona.edu
 SINGULARITY = /usr/local/bin/singularity
 IMG = singularity/$(APP).img
 DEF = singularity/image.def
-SIZE = 384
+SIZE = 512
 
 ifndef CYVERSEUSERNAME
 $(error CYVERSEUSERNAME is not set)
@@ -19,10 +19,10 @@ img: clean
 run:
 	sudo $(SINGULARITY) run $(IMG)
 
-template:
+job:
 	jobs-template -A $(APP) > job.json
 
-job:
+submit:
 	jobs-submit -F job.json
 
 delete:
@@ -35,7 +35,7 @@ upload:
 app:
 	apps-addupdate -F stampede2/app.json
 
-deploy-app: delete upload app
+deploy: delete upload app
 
 test: clean
 	sbatch test.sh

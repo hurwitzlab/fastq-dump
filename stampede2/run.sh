@@ -11,13 +11,13 @@ module load tacc-singularity
 
 echo "all arguments: $@"
 
-IMG="fastq-dump-0.0.1.img"
+IMG="sra-fastq-dump-0.0.1.img"
 
 if [[ ! -e "$IMG" ]]; then
     echo "Missing Singularity image \"$IMG\""
     exit 1
 fi
 
-singularity exec $IMG fastq-dump "$@"
+singularity run $IMG $@
 
 echo "Done"

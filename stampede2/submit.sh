@@ -9,10 +9,10 @@ fi
 
 ACCN=$1
 
-QUEUE="development"
-TIME="02:00:00"
+#QUEUE="development"
+#TIME="01:00:00"
 
-#QUEUE="normal"
-#TIME="24:00:00"
+QUEUE="normal"
+TIME="4:00:00"
 
 sbatch -A iPlant-Collabs -N 1 -n 1 -t $TIME -p $QUEUE -J fastq-dump run.sh "$ACCN"
