@@ -1,5 +1,5 @@
 SINGULARITY = /usr/local/bin/singularity
-IMG = fastq-dump-0.0.1.img
+IMG = fastq-dump-0.1.0.img
 DEF = image.def
 
 run:
