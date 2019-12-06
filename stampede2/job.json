@@ -1,0 +1,14 @@
+{
+  "name":"sra-fastq-dump test-1575670541",
+  "appId": "sra-fastq-dump-0.1.0",
+  "batchQueue": "normal",
+  "maxRunTime": "12:00:00",
+  "memoryPerNode": "32GB",
+  "nodeCount": 1,
+  "processorsPerNode": 16,
+  "archive": true,
+  "archiveSystem": "data.iplantcollaborative.org",
+  "parameters": {
+    "ACCN": "SRR017891"
+  }
+}
