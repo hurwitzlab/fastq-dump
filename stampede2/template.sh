@@ -1,5 +1,8 @@
-#!/bin/bash
+IMG="/work/05066/imicrobe/singularity/fastq-dump-0.1.0.img"
 
-echo "ACCN      \"${ACCN}\""
+if [[ ! -e "$IMG" ]]; then
+    echo "Missing Singularity image \"$IMG\""
+    exit 1
+fi
 
-sh run.sh ${ACCN}
+singularity run $IMG ${ACCN}
